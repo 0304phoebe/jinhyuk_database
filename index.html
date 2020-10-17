@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>bs4樣版</title>
+  </head>
+
+  <body> 
+
+    <header>
+      <div class="zr">
+        <div class='user_box'>
+          <div class='userInfo'>
+            <open-data type="userAvatarUrl"></open-data>
+          </div>
+          <div class='userInfo_name'>
+            <open-data type="userNickName"></open-data> 
+          </div>
+        </div>
+        <div class="water">
+          <div class="water-c">
+            <div class="water-1"> </div>
+            <div class="water-2"> </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="font-btn">
+        <div class="ljh">
+          <h1>LEE JIN HYUK</h1>
+          <h1>DATABASE</h1>
+        </div>
+        <button type="button" class="btn btn-outline-light btn-open" id="form_close">上傳資料</button>
+      </div>
+    </header>
+    
+    <div class="box1">
+    </div>
+
+    <div class="fill">
+      <form method="GET" action="https://script.google.com/macros/s/AKfycbx792rl5003uuunLgL3m6pAm4-hWwhn9HlQXo-yyGtL1SxVhxY/exec">
+        <input type="hidden" name="method" value="write1">
+        <input type="hidden" name="url" value="https://docs.google.com/spreadsheets/d/1mFxrZZ-8R6fdIhcm-6JzNkrH8vt3DZOj5lE3QXbPU-0/edit#gid=0">
+        <input type="hidden" name="tag" value="工作表1">
+  
+        <div class="form-group">
+          <label class="tital" for="theme"></label>
+          <input type="text" class="form-control" id="theme" name="theme" placeholder="請輸入活動主題">
+        </div>
+  
+        <div class="form-group tital ">
+          <label for="date"></label>
+          <input type="date" class="date" id="date" name="bday" value="2018-06-08" >
+        </div>
+
+        <div class="form-group">
+          <!--<label class="tital" for="uploader">上傳者帳號</label>-->
+          <label class="tital" for="uploader"></label>
+          <input type="text" class="form-control" id="uploader" name="uploader" placeholder="請輸入貼文上傳者帳號">
+        </div>
+  
+        <div class="form-group">
+          <!--<label class="tital" for="source">圖片來源</label>-->
+          <label class="tital" for="source"></label>
+          <input type="text" class="form-control" id="source" name="source" placeholder="請輸入圖片來源貼文網址">
+        </div>
+  
+        <div class="form-group">
+          <!--<label class="tital" for="imageSrc">圖片網址</label>-->
+          <label class="tital" for="imageSrc"></label>
+          <input type="text" class="form-control" id="imageSrc" name="imageSrc" placeholder="請輸入圖片網址">
+        </div>
+  
+        <div class="form-group">
+          <!--<label class="tital" for="content">內文</label>-->
+          <label class="tital" for="content"></label>
+          <input type="text" class="form-control" id="content" name="content" placeholder="請輸入內文">
+        </div>
+
+        <div class="tital">
+          <input type="hidden" name="pageName" value="http://idben.epizy.com/testSD/read4.php">
+          <input class="btn-submit" type="submit" value="送出">
+        </div>
+      </form>
+    </div>
+
+    <section>
+      <div class="post">
+        <h2>POST</h2>
+      </div>
+      <div id="show" class="section1 d-flex flex-wrap"></div>
+    </section>
+
+    <footer>
+      <a href="https://twitter.com/fatbe_jhfactory"> © Fatbe_LJH, all rights reserved </a>
+    </footer>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="scripts/jquery.localscroll-1.2.7-min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.scrollTo-1.4.2-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    
+  </body>
+
+  <template id="template01" style="display:none">
+    <div>
+      <div class="card1 card">
+          <a href="Src" style="text-decoration:none;">
+              <img src="ImageSrc" class="card-img-top" alt="...">
+              <div class="card-body">
+              <p class="card-date">Date</p>
+              <p class="card-date"> uploader</p>
+              <h5 class="card-title">Theme</h5>
+              <p class="card-text">Content</p>
+              </div>
+          </a>
+      </div> 
+    </div>  
+
+  </template>
+
+</html>

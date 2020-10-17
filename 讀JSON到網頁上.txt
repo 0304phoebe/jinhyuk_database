@@ -1,0 +1,51 @@
+(1)開1ㄍ新的App script，複製下面ㄉ東西貼上去，然後發布
+
+let doGet = (e)=>{
+  let sheetUrl = "你的試算表網址";
+  let sheetTag = "工作表1";
+  let SpreadSheet = SpreadsheetApp.openByUrl(sheetUrl);
+  let Sheet = SpreadSheet.getSheetByName(sheetTag);
+  var startRow = 1;
+  var startColumn = 1;
+  var endRow = Sheet.getLastRow();
+  var endColumn = Sheet.getLastColumn();
+  var allData = Sheet.getSheetValues(startRow,startColumn,endRow,endColumn);
+  var JSONString = JSON.stringify(allData);
+  Logger.log(JSONString);
+  return ContentService.createTextOutput(JSONString).setMimeType(ContentService.MimeType.JSON);
+}
+
+(2)得到ㄌ發布後ㄉ網址，在main.js輸入以下程式碼
+const getDataURL = "發布後ㄉ網址";
+let imgAry = new Array();
+let html;
+
+$(document).ready(function(){
+    $.get(getDataURL,function(data){
+        imgAry = data;
+        setData();
+    });
+});
+
+function setData(){
+    let tmp = $('#template01');
+    for(var i=0;i<imgAry.length;i++){
+        console.log(imgAry[i]);
+        let htmlCont = tmp.html();
+        htmlCont = htmlCont.replace("ABC",imgAry[i][0]);
+        $('#show').append(htmlCont);
+    }
+}
+
+(3)index.html，</body>後面貼這段程式碼
+  <template id="template01" style="display:none">
+    <div class="col-12 col-md-4 col-lg-3 mb-4">
+        <div class="info">
+          <div class="line line1"><b>ABC</b></div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+(4)index.html，</body>前面貼這段程式碼
+<div id="show"></div>
